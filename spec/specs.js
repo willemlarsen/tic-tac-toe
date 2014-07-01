@@ -23,4 +23,19 @@ describe("Space", function() {
       testSpace.yCoordinate.should.equal(2);
     });
   });
+  describe("create", function() {
+    it("creates a new Space object", function() {
+      var testSpace = Space.create();
+      Space.isPrototypeOf(testSpace).should.equal(true);
+    });
+  });
+  describe("markBy", function() {
+    it("marks a space by a player, whether X or O", function() {
+      var testPlayer = Player.create();
+      var testSpace = Space.create(1, 1);
+      testSpace.markBy(testPlayer);
+      testSpace.markedBy.should.equal("X");
+    });
+  });
 });
+
