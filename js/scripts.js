@@ -35,7 +35,6 @@ var Space = {
 };
 
 var Board = {
-  spaces: Space.spaces,
   initialize: function() {
     var firstSpace = Space.create(1, 1);
     var secondSpace = Space.create(1, 2);
