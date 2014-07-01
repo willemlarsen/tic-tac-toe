@@ -64,4 +64,15 @@ describe("Board", function() {
      Space.spaces.length.should.eql(9);
     });
   });
+  describe("threeInRowVertically", function() {
+    it("returns a win if a player occupies three spaces in a row vertically", function() {
+      var testPlayer = Player.create("X");
+      var newBoard = Object.create(Board);
+      newBoard.initialize();
+      firstSpace.markBy(testPlayer);
+      secondSpace.markBy(testPlayer);
+      thirdSpace.markBy(testPlayer);
+      threeInRowVertically(testPlayer).should.equal(true);
+    });
+  });
 });
