@@ -37,5 +37,13 @@ describe("Space", function() {
       testSpace.markedBy.should.equal("X");
     });
   });
+  describe("find", function() {
+    it("reveals whether a space is marked by an X or an O", function() {
+      var testPlayer = Player.create("X");
+      var testSpace = Space.create(1, 1);
+      Space.markBy(testPlayer);
+      Space.find(1, 1).should.equal("X");
+    });
+  });
 });
 
