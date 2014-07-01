@@ -1,3 +1,6 @@
+beforeEach(function() {
+  Space.spaces = [];
+});
 describe("Player", function() {
   describe("initialize", function() {
     it("is initialized with a symbol", function() {
@@ -35,6 +38,12 @@ describe("Space", function() {
       var testSpace = Space.create(1, 1);
       testSpace.markBy(testPlayer);
       testSpace.markedBy.should.equal("X");
+    });
+  });
+  describe("spaces", function() {
+    it("creates an array for all Space objects", function() {
+      var testSpace = Space.create(1, 1);
+      Space.spaces.should.eql([testSpace]);
     });
   });
   describe("find", function() {
