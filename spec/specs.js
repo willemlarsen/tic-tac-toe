@@ -31,7 +31,7 @@ describe("Space", function() {
   });
   describe("markBy", function() {
     it("marks a space by a player, whether X or O", function() {
-      var testPlayer = Player.create();
+      var testPlayer = Player.create("X");
       var testSpace = Space.create(1, 1);
       testSpace.markBy(testPlayer);
       testSpace.markedBy.should.equal("X");
