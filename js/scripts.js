@@ -11,6 +11,14 @@ var Player = {
 
 var Space = {
   spaces: [],
+  find: function(x, y) {
+    var length = Space.spaces.length;
+    for (var index = 0; index < length; index++) {
+      if(Space.spaces[index].xCoordinate === x && Space.spaces[index].yCoordinate === y) {
+        return Space.spaces[index].markedBy;
+      }
+    }
+  },
   markBy: function (player) {
     this.markedBy = player.symbol;
   },
@@ -23,6 +31,6 @@ var Space = {
     this.xCoordinate = x;
     this.yCoordinate = y;
     Space.spaces.push(this);
-  }
+  },
 };
 

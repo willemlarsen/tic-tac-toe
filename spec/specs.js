@@ -50,7 +50,7 @@ describe("Space", function() {
     it("reveals whether a space is marked by an X or an O", function() {
       var testPlayer = Player.create("X");
       var testSpace = Space.create(1, 1);
-      Space.markBy(testPlayer);
+      testSpace.markBy(testPlayer);
       Space.find(1, 1).should.equal("X");
     });
   });
