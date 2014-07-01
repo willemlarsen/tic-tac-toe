@@ -56,3 +56,12 @@ describe("Space", function() {
   });
 });
 
+describe("Board", function() {
+  describe("initialize", function() {
+    it("creates 9 spaces for a new board on a 3 x 3 grid", function(){
+      var newBoard = Object.create(Board);
+      newBoard.initialize();
+      newBoard.spaces.should.eql([9]);
+    });
+  });
+});
