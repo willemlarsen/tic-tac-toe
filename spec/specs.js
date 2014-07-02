@@ -61,17 +61,7 @@ describe("Board", function() {
     it("creates 9 spaces for a new board on a 3 x 3 grid", function(){
       var newBoard = Object.create(Board);
       newBoard.initialize();
-     Space.spaces.length.should.eql(9);
-    });
-  });
-  describe("twoInRowVertically", function() {
-    it("returns a win if a player occupies two spaces in a row vertically", function() {
-    var testPlayer = Player.create("X");
-    var newBoard = Object.create(Board);
-    newBoard.initialize();
-    firstSpace.markBy(testPlayer);
-    secondSpace.markBy(testPlayer);
-    newBoard.twoInRowVertically(firstSpace, secondSpace).should.equal(true);
+     Space.spaces.length.should.equal(9);
     });
   });
 });

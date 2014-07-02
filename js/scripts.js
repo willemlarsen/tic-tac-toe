@@ -35,16 +35,24 @@ var Space = {
 };
 
 var Board = {
+  initializeColumnOne: function() {
+    for (var index = 1; index === 3; index++) {
+      Space.create(1, index);
+    }
+  },
+  twoInRowVertically: function(spaceOne, spaceTwo) {
+      if ((spaceOne.markedBy === spaceTwo.markedBy) &&
+        (spaceOne.xCoordinate === spaceTwo.xCoordinate) &&
+        (spaceOne.xCoordinate === spaceTwo.xCoordinate - 1 ||
+          spaceOne.xCoordinate === spaceTwo.xCoordinate + 1)) {
+        return true;
+      } else {
+        return false;
+      }
+  },
   initialize: function() {
-    var firstSpace = Space.create(1, 1);
-    var secondSpace = Space.create(1, 2);
-    var thirdSpace = Space.create(1, 3);
-    var fourthSpace = Space.create(2, 1);
-    var fifthSpace = Space.create(2, 2);
-    var sixthSpace = Space.create(2, 3);
-    var seventhSpace = Space.create(3, 1);
-    var eighthSpace = Space.create(3, 2);
-    var ninthSpace = Space.create(3, 3);
+    this.initializeColumnOne();
+    return Space.spaces;
   }
 };
 
