@@ -71,4 +71,11 @@ describe("Board", function() {
      Space.spaces.length.should.equal(3);
     });
   });
+  describe('intializeColumnThree', function(){
+    it('creates 3 spaces for column three', function(){
+      var newBoard = Object.create(Board);
+      newBoard.initializeColumnThree();
+      Space.spaces.length.should.equal(3);
+    });
+  });
 });

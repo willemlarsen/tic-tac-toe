@@ -45,6 +45,11 @@ var Board = {
       Space.create(2, index);
     }
   },
+  initializeColumnThree: function() {
+    for (var index = 1; index < 4; index++) {
+      Space.create(3, index);
+    }
+  },
   twoInRowVertically: function(spaceOne, spaceTwo) {
       if ((spaceOne.markedBy === spaceTwo.markedBy) &&
         (spaceOne.xCoordinate === spaceTwo.xCoordinate) &&
