@@ -62,6 +62,8 @@ var Board = {
   },
   initialize: function() {
     this.initializeColumnOne();
+    this.initializeColumnTwo();
+    this.initializeColumnThree();
   }
 };
 

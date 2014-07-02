@@ -78,4 +78,12 @@ describe("Board", function() {
       Space.spaces.length.should.equal(3);
     });
   });
+  describe('initialize', function(){
+    it('initializes columns one, two, and three into a 3 x 3 grid', function() {
+      var newBoard = Object.create(Board);
+      newBoard.initialize();
+      Space.spaces.length.should.equal(9);
+    });
+  });
+  
 });
