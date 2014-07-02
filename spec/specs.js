@@ -60,7 +60,14 @@ describe("Board", function() {
   describe("initializeColumnOne", function() {
     it("creates 3 spaces for column one", function(){
       var newBoard = Object.create(Board);
-      newBoard.initialize();
+      newBoard.initializeColumnOne();
+     Space.spaces.length.should.equal(3);
+    });
+  });
+  describe("intializeColumnTwo", function() {
+    it("creates 3 spaces for column two", function() {
+      var newBoard = Object.create(Board);
+      newBoard.initializeColumnTwo();
      Space.spaces.length.should.equal(3);
     });
   });
