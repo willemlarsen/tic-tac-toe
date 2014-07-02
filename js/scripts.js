@@ -36,8 +36,13 @@ var Space = {
 
 var Board = {
   initializeColumnOne: function() {
-    for (var index = 1; index === 3; index++) {
+    for (var index = 1; index < 4; index++) {
       Space.create(1, index);
+    }
+  },
+  initializeColumnTwo: function() {
+    for (var index = 1; index < 4; index++) {
+      Space.create(2, index);
     }
   },
   twoInRowVertically: function(spaceOne, spaceTwo) {
@@ -52,7 +57,6 @@ var Board = {
   },
   initialize: function() {
     this.initializeColumnOne();
-    return Space.spaces;
   }
 };
 
