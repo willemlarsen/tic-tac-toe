@@ -21,9 +21,6 @@ var Space = {
   },
   markBy: function (player) {
     this.markedBy = player.symbol;
-    if (player.symbol === "X") {
-     Board.spacesMarkedX.push(this);
-    }
   },
   create: function(x, y) {
     var newSpace = Object.create(Space);
@@ -38,11 +35,16 @@ var Space = {
 };
 
 var Board = {
-  spacesMarkedX = [];
-  verticalWins: function() {
-    if [Space.spaces[0], Space.spaces[1], Space.spaces[2] ]
-  winsForX: function() {
-
+  verticalWinsForX: function() {
+    if(Space.spaces[0].markedBy === "X" && Space.spaces[1].markedBy === "X" && Space.spaces[2].markedBy === "X") {
+      return true;
+    } else if(Space.spaces[3].markedBy === "X" && Space.spaces[4].markedBy === "X" && Space.spaces[5].markedBy === "X") {
+      return true;
+    } else if(Space.spaces[6].markedBy === "X" && Space.spaces[7].markedBy === "X" && Space.spaces[8].markedBy === "X") {
+      return true;
+    } else {
+      return false;
+    }
   },
   initializeColumnOne: function() {
     for (var index = 1; index < 4; index++) {
