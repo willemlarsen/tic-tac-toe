@@ -35,6 +35,13 @@ var Space = {
 };
 
 var Board = {
+  winsForX: function() {
+    if (this.verticalWinsForX() || this.horizontalWinsForX() || this.diagonalWinsForX()) {
+      return true;
+    } else {
+      return false;
+    }
+  },
   verticalWinsForX: function() {
     var symbol = "X";
     if(Space.spaces[0].markedBy === symbol && Space.spaces[1].markedBy === symbol && Space.spaces[2].markedBy === symbol) {
