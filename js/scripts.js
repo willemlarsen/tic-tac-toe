@@ -101,77 +101,149 @@ var Board = {
 $(document).ready(function() {
   var newBoard = Object.create(Board);
   newBoard.initialize();
+  var turn = "X";
 
   $('#0').click(function() {
-    $('#0-marked').text("X");
-    Space.spaces[0].markBy("X");
+    $('#0-marked').text(turn);
+    Space.spaces[0].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#1').click(function() {
-    $('#1-marked').text("X");
-    Space.spaces[1].markBy("X");
+    $('#1-marked').text(turn);
+    Space.spaces[1].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#2').click(function() {
-    $('#2-marked').text("X");
-    Space.spaces[2].markBy("X");
+    $('#2-marked').text(turn);
+    Space.spaces[2].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#3').click(function() {
-    $('#3-marked').text("X");
-    Space.spaces[3].markBy("X");
+    $('#3-marked').text(turn);
+    Space.spaces[3].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#4').click(function() {
-    $('#4-marked').text("X");
-    Space.spaces[4].markBy("X");
+    $('#4-marked').text(turn);
+    Space.spaces[4].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#5').click(function() {
-    $('#5-marked').text("X");
-    Space.spaces[5].markBy("X");
+    $('#5-marked').text(turn);
+    Space.spaces[5].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#6').click(function() {
-    $('#6-marked').text("X");
-    Space.spaces[6].markBy("X");
+    $('#6-marked').text(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#7').click(function() {
-    $('#7-marked').text("X");
-    Space.spaces[7].markBy("X");
+    $('#7-marked').text(turn);
+    Space.spaces[7].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
   $('#8').click(function() {
-    $('#8-marked').text("X");
-    Space.spaces[8].markBy("X");
+    $('#8-marked').text(turn);
+    Space.spaces[8].markBy(turn);
     if(Board.winsForX()) {
       $('.win').show();
-      $('.winner').text("X");
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
     }
   });
 });
