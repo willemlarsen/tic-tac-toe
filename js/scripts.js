@@ -99,13 +99,9 @@ var Board = {
 };
 
 $(document).ready(function() {
-  var squares = ["0", "1", "2", "3", "4", "5", "6", "7", "8"];
-  squares.forEach(function(square) {
-      var clickableBoard = function() {
-        $("button#" + square).click(function() {
-          $('button#' + square  + '#marked').text("X");
-        });
-      };
+  $('#0').click(function() {
+    $('#0-marked').text("X");
+    Space.spaces[0].markBy("X");
   });
 });
 
