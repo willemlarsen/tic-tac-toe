@@ -37,7 +37,7 @@ describe("Space", function() {
     it("marks a space by a player, whether X or O", function() {
       var testPlayer = Player.create("X");
       var testSpace = Space.create(1, 1);
-      testSpace.markBy(testPlayer);
+      testSpace.markBy(testPlayer.symbol);
       testSpace.markedBy.should.equal("X");
     });
   });
@@ -45,14 +45,6 @@ describe("Space", function() {
     it("creates an array for all Space objects", function() {
       var testSpace = Space.create(1, 1);
       Space.spaces.should.eql([testSpace]);
-    });
-  });
-  describe("find", function() {
-    it("reveals whether a space is marked by an X or an O", function() {
-      var testPlayer = Player.create("X");
-      var testSpace = Space.create(1, 1);
-      testSpace.markBy(testPlayer);
-      Space.find(1, 1).should.equal("X");
     });
   });
 });
@@ -86,7 +78,7 @@ describe("Board", function() {
       Space.spaces.length.should.equal(9);
     });
   });
-  describe('verticalWinsForX', function() {
+  describe('verticalWins', function() {
     it('analyzes the board and returns true if a vertical win condition has been reached', function() {
       var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
@@ -94,10 +86,10 @@ describe("Board", function() {
       Space.spaces[0].markBy(testPlayer);
       Space.spaces[1].markBy(testPlayer);
       Space.spaces[2].markBy(testPlayer);
-      testBoard.verticalWinsForX().should.equal(true);
+      testBoard.verticalWins().should.equal(true);
     });
   });
-  describe('horizontalWinsForX', function() {
+  describe('horizontalWins', function() {
     it('analyzes the board and returns true if a horizontal win condition has been reached', function(){
       var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
@@ -105,25 +97,22 @@ describe("Board", function() {
       Space.spaces[0].markBy(testPlayer);
       Space.spaces[3].markBy(testPlayer);
       Space.spaces[6].markBy(testPlayer);
-      testBoard.horizontalWinsForX().should.equal(true);
+      testBoard.horizontalWins().should.equal(true);
     });
   });
-  describe('diagonalWinsForX', function() {
+  describe('diagonalWins', function() {
     it('analyzes the board and returns true if a diagonal win condition has been reached', function(done) {
       var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
       testBoard.initialize();
-      Space.spaces[2].markBy(testPlayer);
-      Space.spaces[4].markBy(testPlayer);
-      Space.spaces[6].markBy(testPlayer);
-      testBoard.diagonalWinsForX().should.equal(true);
+      Space.spaces[2].markBy("X");
+      Space.spaces[4].markBy("X");
+      Space.spaces[6].markBy("X");
+      testBoard.diagonalWins().should.equal(true);
       done();
     });
   });
-  describe('winsForX', function() {
-    beforeEach(function() {
-      Space.spaces = [];
-    });
+  describe('wins', function() {
     it('analyzes the board and returns true if any win condition for X has been reached', function(done) {
       var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
@@ -131,7 +120,7 @@ describe("Board", function() {
       Space.spaces[8].markBy(testPlayer);
       Space.spaces[4].markBy(testPlayer);
       Space.spaces[0].markBy(testPlayer);
-      testBoard.winsForX().should.equal(true);
+      testBoard.wins().should.equal(true);
       done();
     });
     it('analyzes the board and returns false if no win condition for X has been reached', function(done) {
@@ -141,7 +130,7 @@ describe("Board", function() {
       Space.spaces[8].markBy(testPlayer);
       Space.spaces[5].markBy(testPlayer);
       Space.spaces[0].markBy(testPlayer);
-      testBoard.winsForX().should.equal(false);
+      testBoard.wins().should.equal(false);
       done();
     });
   });

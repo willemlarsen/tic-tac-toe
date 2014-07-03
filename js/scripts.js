@@ -35,14 +35,14 @@ var Space = {
 };
 
 var Board = {
-  winsForX: function(turn) {
-    if (this.verticalWinsForX(turn) || this.horizontalWinsForX(turn) || this.diagonalWinsForX(turn)) {
+  wins: function(turn) {
+    if (this.verticalWins(turn) || this.horizontalWins(turn) || this.diagonalWins(turn)) {
       return true;
     } else {
       return false;
     }
   },
-  verticalWinsForX: function(turn) {
+  verticalWins: function(turn) {
     var symbol = turn;
     if(Space.spaces[0].markedBy === symbol && Space.spaces[1].markedBy === symbol && Space.spaces[2].markedBy === symbol) {
       return true;
@@ -54,7 +54,7 @@ var Board = {
       return false;
     }
   },
-  horizontalWinsForX: function(turn) {
+  horizontalWins: function(turn) {
     var symbol = turn;
     if(Space.spaces[0].markedBy === symbol && Space.spaces[3].markedBy === symbol && Space.spaces[6].markedBy === symbol) {
       return true;
@@ -66,7 +66,7 @@ var Board = {
       return false;
     }
   },
-  diagonalWinsForX: function(turn) {
+  diagonalWins: function(turn) {
    var symbol = turn;
     if (Space.spaces[0].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[8].markedBy === symbol) {
       return true;
@@ -106,7 +106,7 @@ $(document).ready(function() {
   $('#0').click(function() {
     $('#0-marked').text(turn);
     Space.spaces[0].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -122,7 +122,7 @@ $(document).ready(function() {
   $('#1').click(function() {
     $('#1-marked').text(turn);
     Space.spaces[1].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -138,7 +138,7 @@ $(document).ready(function() {
   $('#2').click(function() {
     $('#2-marked').text(turn);
     Space.spaces[2].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -154,7 +154,7 @@ $(document).ready(function() {
   $('#3').click(function() {
     $('#3-marked').text(turn);
     Space.spaces[3].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -170,7 +170,7 @@ $(document).ready(function() {
   $('#4').click(function() {
     $('#4-marked').text(turn);
     Space.spaces[4].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -186,7 +186,7 @@ $(document).ready(function() {
   $('#5').click(function() {
     $('#5-marked').text(turn);
     Space.spaces[5].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -201,7 +201,7 @@ $(document).ready(function() {
   });
   $('#6').click(function() {
     $('#6-marked').text(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -217,7 +217,7 @@ $(document).ready(function() {
   $('#7').click(function() {
     $('#7-marked').text(turn);
     Space.spaces[7].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
@@ -233,7 +233,7 @@ $(document).ready(function() {
   $('#8').click(function() {
     $('#8-marked').text(turn);
     Space.spaces[8].markBy(turn);
-    if(Board.winsForX(turn)) {
+    if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
     } else if (turn === "X") {
