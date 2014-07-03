@@ -36,26 +36,31 @@ var Space = {
 
 var Board = {
   verticalWinsForX: function() {
-    if(Space.spaces[0].markedBy === "X" && Space.spaces[1].markedBy === "X" && Space.spaces[2].markedBy === "X") {
+    var symbol = "X";
+    if(Space.spaces[0].markedBy === symbol && Space.spaces[1].markedBy === symbol && Space.spaces[2].markedBy === symbol) {
       return true;
-    } else if(Space.spaces[3].markedBy === "X" && Space.spaces[4].markedBy === "X" && Space.spaces[5].markedBy === "X") {
+    } else if(Space.spaces[3].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[5].markedBy === symbol) {
       return true;
-    } else if(Space.spaces[6].markedBy === "X" && Space.spaces[7].markedBy === "X" && Space.spaces[8].markedBy === "X") {
+    } else if(Space.spaces[6].markedBy === symbol && Space.spaces[7].markedBy === symbol && Space.spaces[8].markedBy === symbol) {
       return true;
     } else {
       return false;
     }
   },
   horizontalWinsForX: function() {
-    if(Space.spaces[0].markedBy === "X" && Space.spaces[3].markedBy === "X" && Space.spaces[6].markedBy === "X") {
+    var symbol = "X";
+    if(Space.spaces[0].markedBy === symbol && Space.spaces[3].markedBy === symbol && Space.spaces[6].markedBy === symbol) {
       return true;
-    } else if(Space.spaces[1].markedBy === "X" && Space.spaces[4].markedBy === "X" && Space.spaces[7].markedBy === "X") {
+    } else if(Space.spaces[1].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[7].markedBy === symbol) {
       return true;
-    } else if(Space.spaces[2].markedBy === "X" && Space.spaces[5].markedBy === "X" && Space.spaces[8].markedBy === "X") {
+    } else if(Space.spaces[2].markedBy === symbol && Space.spaces[5].markedBy === symbol && Space.spaces[8].markedBy === symbol) {
       return true;
     } else {
       return false;
     }
+  },
+  diagonalWinsForX: function() {
+   return true;
   },
   initializeColumnOne: function() {
     for (var index = 1; index < 4; index++) {

@@ -93,7 +93,7 @@ describe("Board", function() {
       Space.spaces[0].markBy(testPlayer);
       Space.spaces[1].markBy(testPlayer);
       Space.spaces[2].markBy(testPlayer);
-      Board.verticalWinsForX().should.equal(true);
+      testBoard.verticalWinsForX().should.equal(true);
     });
   });
   describe('horizontalWinsForX', function() {
@@ -104,7 +104,21 @@ describe("Board", function() {
       Space.spaces[0].markBy(testPlayer);
       Space.spaces[3].markBy(testPlayer);
       Space.spaces[6].markBy(testPlayer);
-      Board.horizontalWinsForX().should.equal(true);
+      testBoard.horizontalWinsForX().should.equal(true);
+    });
+  });
+  describe('diagonalWinsForX', function() {
+    it('analyzes the board and returns true if a diagonal win condition has been reached', function(done) {
+      var testBoard = Object.create(Board);
+      var testPlayer = Player.create("X");
+      testBoard.initialize();
+      Space.spaces[2].markBy(testPlayer);
+      Space.spaces[4].markBy(testPlayer);
+      Space.spaces[6].markBy(testPlayer);
+      testBoard.diagonalWinsForX().should.equal(true);
+      done();
     });
   });
 });
+
+
