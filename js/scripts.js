@@ -20,7 +20,7 @@ var Space = {
     }
   },
   markBy: function (player) {
-    this.markedBy = player.symbol;
+    this.markedBy = player;
   },
   create: function(x, y) {
     var newSpace = Object.create(Space);
@@ -99,41 +99,80 @@ var Board = {
 };
 
 $(document).ready(function() {
+  var newBoard = Object.create(Board);
+  newBoard.initialize();
+
   $('#0').click(function() {
     $('#0-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[0].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#1').click(function() {
     $('#1-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[1].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#2').click(function() {
     $('#2-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[2].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#3').click(function() {
     $('#3-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[3].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#4').click(function() {
     $('#4-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[4].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#5').click(function() {
     $('#5-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[5].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#6').click(function() {
     $('#6-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[6].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#7').click(function() {
     $('#7-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[7].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
   $('#8').click(function() {
     $('#8-marked').text("X");
-    Space.spaces[square].markBy("X");
+    Space.spaces[8].markBy("X");
+    if(Board.winsForX()) {
+      $('.win').show();
+      $('.winner').text("X");
+    }
   });
 });
 
