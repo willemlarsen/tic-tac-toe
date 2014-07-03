@@ -201,6 +201,7 @@ $(document).ready(function() {
   });
   $('#6').click(function() {
     $('#6-marked').text(turn);
+    Space.spaces[6].markBy(turn);
     if(Board.wins(turn)) {
       $('.win').show();
       $('.winner').text(turn);
