@@ -85,8 +85,8 @@ describe("Board", function() {
       Space.spaces.length.should.equal(9);
     });
   });
-  describe('winsForX', function() {
-    it('analyzes the board after every X move and returns true if a win condition has been reached', function() {
+  describe('verticalWinsForX', function() {
+    it('analyzes the board after every X move and returns true if a vertical win condition has been reached', function() {
       var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
       testBoard.initialize();
@@ -96,5 +96,4 @@ describe("Board", function() {
       Board.winsForX().should.equal(true);
     });
   });
-
 });
