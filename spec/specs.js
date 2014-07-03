@@ -93,7 +93,7 @@ describe("Board", function() {
       Space.spaces[0].markBy(testPlayer);
       Space.spaces[1].markBy(testPlayer);
       Space.spaces[2].markBy(testPlayer);
-      Board.winsForX().should.equal(true);
+      Board.verticalWinsForX().should.equal(true);
     });
   });
 });

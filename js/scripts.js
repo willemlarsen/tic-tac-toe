@@ -21,6 +21,9 @@ var Space = {
   },
   markBy: function (player) {
     this.markedBy = player.symbol;
+    if (player.symbol === "X") {
+     Board.spacesMarkedX.push(this);
+    }
   },
   create: function(x, y) {
     var newSpace = Object.create(Space);
@@ -35,6 +38,12 @@ var Space = {
 };
 
 var Board = {
+  spacesMarkedX = [];
+  verticalWins: function() {
+    if [Space.spaces[0], Space.spaces[1], Space.spaces[2] ]
+  winsForX: function() {
+
+  },
   initializeColumnOne: function() {
     for (var index = 1; index < 4; index++) {
       Space.create(1, index);
@@ -49,16 +58,6 @@ var Board = {
     for (var index = 1; index < 4; index++) {
       Space.create(3, index);
     }
-  },
-  twoInRowVertically: function(spaceOne, spaceTwo) {
-      if ((spaceOne.markedBy === spaceTwo.markedBy) &&
-        (spaceOne.xCoordinate === spaceTwo.xCoordinate) &&
-        ((spaceOne.yCoordinate === spaceTwo.yCoordinate - 1 ||
-          (spaceOne.yCoordinate === spaceTwo.yCoordinate + 1)))) {
-        return true;
-      } else {
-        return false;
-      }
   },
   initialize: function() {
     this.initializeColumnOne();
