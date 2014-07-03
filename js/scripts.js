@@ -67,7 +67,14 @@ var Board = {
     }
   },
   diagonalWinsForX: function() {
-   return true;
+   var symbol = "X";
+    if (Space.spaces[0].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[8].markedBy === symbol) {
+      return true;
+    } else if (Space.spaces[2].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[6].markedBy === symbol) {
+      return true;
+    } else {
+      return false;
+    }
   },
   initializeColumnOne: function() {
     for (var index = 1; index < 4; index++) {

@@ -1,6 +1,7 @@
 beforeEach(function() {
   Space.spaces = [];
 });
+
 describe("Player", function() {
   describe("initialize", function() {
     it("is initialized with a symbol", function() {
@@ -120,6 +121,9 @@ describe("Board", function() {
     });
   });
   describe('winsForX', function() {
+    beforeEach(function() {
+      Space.spaces = [];
+    });
     it('analyzes the board and returns true if any win condition for X has been reached', function(done) {
       var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
@@ -128,6 +132,16 @@ describe("Board", function() {
       Space.spaces[4].markBy(testPlayer);
       Space.spaces[0].markBy(testPlayer);
       testBoard.winsForX().should.equal(true);
+      done();
+    });
+    it('analyzes the board and returns false if no win condition for X has been reached', function(done) {
+      var testBoard = Object.create(Board);
+      var testPlayer = Player.create("X");
+      testBoard.initialize();
+      Space.spaces[8].markBy(testPlayer);
+      Space.spaces[5].markBy(testPlayer);
+      Space.spaces[0].markBy(testPlayer);
+      testBoard.winsForX().should.equal(false);
       done();
     });
   });
