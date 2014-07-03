@@ -119,6 +119,18 @@ describe("Board", function() {
       done();
     });
   });
+  describe('winsForX', function() {
+    it('analyzes the board and returns true if any win condition for X has been reached', function(done) {
+      var testBoard = Object.create(Board);
+      var testPlayer = Player.create("X");
+      testBoard.initialize();
+      Space.spaces[8].markBy(testPlayer);
+      Space.spaces[4].markBy(testPlayer);
+      Space.spaces[0].markBy(testPlayer);
+      testBoard.winsForX().should.equal(true);
+      done();
+    });
+  });
 });
 
 
