@@ -101,7 +101,39 @@ var Board = {
 $(document).ready(function() {
   $('#0').click(function() {
     $('#0-marked').text("X");
-    Space.spaces[0].markBy("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#1').click(function() {
+    $('#1-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#2').click(function() {
+    $('#2-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#3').click(function() {
+    $('#3-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#4').click(function() {
+    $('#4-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#5').click(function() {
+    $('#5-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#6').click(function() {
+    $('#6-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#7').click(function() {
+    $('#7-marked').text("X");
+    Space.spaces[square].markBy("X");
+  });
+  $('#8').click(function() {
+    $('#8-marked').text("X");
+    Space.spaces[square].markBy("X");
   });
 });
 
