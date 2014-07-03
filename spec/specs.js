@@ -59,42 +59,42 @@ describe("Space", function() {
 describe("Board", function() {
   describe("initializeColumnOne", function() {
     it("creates 3 spaces for column one", function() {
-      var newBoard = Object.create(Board);
-      newBoard.initializeColumnOne();
+      var testBoard = Object.create(Board);
+      testBoard.initializeColumnOne();
       Space.spaces.length.should.equal(3);
     });
   });
   describe("intializeColumnTwo", function() {
     it("creates 3 spaces for column two", function() {
-      var newBoard = Object.create(Board);
-      newBoard.initializeColumnTwo();
+      var testBoard = Object.create(Board);
+      testBoard.initializeColumnTwo();
       Space.spaces.length.should.equal(3);
     });
   });
   describe('intializeColumnThree', function() {
     it('creates 3 spaces for column three', function() {
-      var newBoard = Object.create(Board);
-      newBoard.initializeColumnThree();
+      var testBoard = Object.create(Board);
+      testBoard.initializeColumnThree();
       Space.spaces.length.should.equal(3);
     });
   });
   describe('initialize', function() {
     it('initializes columns one, two, and three into a 3 x 3 grid', function() {
-      var newBoard = Object.create(Board);
-      newBoard.initialize();
+      var testBoard = Object.create(Board);
+      testBoard.initialize();
       Space.spaces.length.should.equal(9);
     });
   });
-  describe('twoInRowVertically', function() {
-    it('returns true if two spaces marked by the same symbol are in a row vertically', function(){
-      var newBoard = Object.create(Board);
-      newBoard.initialize();
+  describe('winsForX', function() {
+    it('analyzes the board after every X move and returns true if a win condition has been reached', function() {
+      var testBoard = Object.create(Board);
       var testPlayer = Player.create("X");
+      testBoard.initialize();
       Space.spaces[0].markBy(testPlayer);
       Space.spaces[1].markBy(testPlayer);
-      newBoard.twoInRowVertically(Space.spaces[0], Space.spaces[1]).should.equal(true);
+      Space.spaces[2].markBy(testPlayer);
+      winsForX().should.equal(true);
     });
-    
   });
 
 });
