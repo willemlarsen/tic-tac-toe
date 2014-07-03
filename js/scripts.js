@@ -53,8 +53,8 @@ var Board = {
   twoInRowVertically: function(spaceOne, spaceTwo) {
       if ((spaceOne.markedBy === spaceTwo.markedBy) &&
         (spaceOne.xCoordinate === spaceTwo.xCoordinate) &&
-        (spaceOne.xCoordinate === spaceTwo.xCoordinate - 1 ||
-          spaceOne.xCoordinate === spaceTwo.xCoordinate + 1)) {
+        ((spaceOne.yCoordinate === spaceTwo.yCoordinate - 1 ||
+          (spaceOne.yCoordinate === spaceTwo.yCoordinate + 1)))) {
         return true;
       } else {
         return false;

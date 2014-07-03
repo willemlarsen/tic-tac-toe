@@ -58,32 +58,43 @@ describe("Space", function() {
 
 describe("Board", function() {
   describe("initializeColumnOne", function() {
-    it("creates 3 spaces for column one", function(){
+    it("creates 3 spaces for column one", function() {
       var newBoard = Object.create(Board);
       newBoard.initializeColumnOne();
-     Space.spaces.length.should.equal(3);
+      Space.spaces.length.should.equal(3);
     });
   });
   describe("intializeColumnTwo", function() {
     it("creates 3 spaces for column two", function() {
       var newBoard = Object.create(Board);
       newBoard.initializeColumnTwo();
-     Space.spaces.length.should.equal(3);
+      Space.spaces.length.should.equal(3);
     });
   });
-  describe('intializeColumnThree', function(){
-    it('creates 3 spaces for column three', function(){
+  describe('intializeColumnThree', function() {
+    it('creates 3 spaces for column three', function() {
       var newBoard = Object.create(Board);
       newBoard.initializeColumnThree();
       Space.spaces.length.should.equal(3);
     });
   });
-  describe('initialize', function(){
+  describe('initialize', function() {
     it('initializes columns one, two, and three into a 3 x 3 grid', function() {
       var newBoard = Object.create(Board);
       newBoard.initialize();
       Space.spaces.length.should.equal(9);
     });
   });
-  
+  describe('twoInRowVertically', function() {
+    it('returns true if two spaces marked by the same symbol are in a row vertically', function(){
+      var newBoard = Object.create(Board);
+      newBoard.initialize();
+      var testPlayer = Player.create("X");
+      Space.spaces[0].markBy(testPlayer);
+      Space.spaces[1].markBy(testPlayer);
+      newBoard.twoInRowVertically(Space.spaces[0], Space.spaces[1]).should.equal(true);
+    });
+    
+  });
+
 });
