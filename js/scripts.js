@@ -1,14 +1,3 @@
-var Player = {
-  create: function(symbol) {
-    var newPlayer = Object.create(Player);
-    newPlayer.initialize(symbol);
-    return newPlayer;
-  },
-  initialize: function (symbol) {
-    this.symbol = symbol;
-  }
-};
-
 var Space = {
   spaces: [],
   find: function(x, y) {
@@ -36,7 +25,7 @@ var Space = {
 
 var Board = {
   wins: function(turn) {
-    if (this.verticalWins(turn) || this.horizontalWins(turn) || this.diagonalWins(turn)) {
+    if (Board.verticalWins(turn) || Board .horizontalWins(turn) || Board .diagonalWins(turn)) {
       return true;
     } else {
       return false;
@@ -68,9 +57,9 @@ var Board = {
   },
   diagonalWins: function(turn) {
    var symbol = turn;
-    if (Space.spaces[0].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[8].markedBy === symbol) {
+    if(Space.spaces[0].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[8].markedBy === symbol) {
       return true;
-    } else if (Space.spaces[2].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[6].markedBy === symbol) {
+    } else if(Space.spaces[2].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[6].markedBy === symbol) {
       return true;
     } else {
       return false;
