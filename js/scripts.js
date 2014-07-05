@@ -34,6 +34,7 @@ var Board = {
   verticalWins: function(turn) {
     var symbol = turn;
     if(Space.spaces[0].markedBy === symbol && Space.spaces[1].markedBy === symbol && Space.spaces[2].markedBy === symbol) {
+    
       return true;
     } else if(Space.spaces[3].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[5].markedBy === symbol) {
       return true;

@@ -1,7 +1,7 @@
 beforeEach(function() {
   Space.spaces = [];
 });
-  
+
 describe("Space", function() {
   describe("initialize", function() {
     it("is initialized with an x and y coordinate", function() {
@@ -68,7 +68,7 @@ describe("Board", function() {
       Space.spaces[0].markBy("X");
       Space.spaces[1].markBy("X");
       Space.spaces[2].markBy("X");
-      testBoard.verticalWins().should.equal(true);
+      testBoard.verticalWins("X").should.equal(true);
     });
   });
   describe('horizontalWins', function() {
@@ -78,7 +78,7 @@ describe("Board", function() {
       Space.spaces[0].markBy("X");
       Space.spaces[3].markBy("X");
       Space.spaces[6].markBy("X");
-      testBoard.horizontalWins().should.equal(true);
+      testBoard.horizontalWins("X").should.equal(true);
     });
   });
   describe('diagonalWins', function() {
@@ -88,7 +88,7 @@ describe("Board", function() {
       Space.spaces[2].markBy("X");
       Space.spaces[4].markBy("X");
       Space.spaces[6].markBy("X");
-      testBoard.diagonalWins().should.equal(true);
+      testBoard.diagonalWins("X").should.equal(true);
     });
   });
   describe('wins', function() {
@@ -98,7 +98,7 @@ describe("Board", function() {
       Space.spaces[8].markBy("X");
       Space.spaces[4].markBy("X");
       Space.spaces[0].markBy("X");
-      testBoard.wins().should.equal(true);
+      testBoard.wins("X").should.equal(true);
     });
     it('analyzes the board and returns false if no win condition for X has been reached', function() {
       var testBoard = Object.create(Board);
@@ -106,7 +106,7 @@ describe("Board", function() {
       Space.spaces[8].markBy("X");
       Space.spaces[5].markBy("X");
       Space.spaces[0].markBy("X");
-      testBoard.wins().should.equal(false);
+      testBoard.wins("X").should.equal(false);
     });
   });
 });
