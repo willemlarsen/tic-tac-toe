@@ -1,3 +1,19 @@
+var onSpaceClicked = function(turn, spaceNumber) {
+  Space.spaces[spaceNumber].markBy(turn);
+  if(Board.wins(turn)) {
+    $('.win').show();
+    $('.winner').text(turn);
+  } else if (turn === "X") {
+    turn = "O";
+    $('.open-message-x').hide();
+    $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+  } else if (turn === "O") {
+    turn = "X";
+    $('.open-message-x').hide();
+    $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+  } return turn;
+};
+
 var Space = {
   spaces: [],
   find: function(x, y) {
@@ -24,21 +40,6 @@ var Space = {
 };
 
 var Board = {
-  onSpaceClicked: function(turn, spaceNumber) {
-    Space.spaces[spaceNumber].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } return turn;
-  },
   wins: function(turn) {
     if (Board.verticalWins(turn) || Board .horizontalWins(turn) || Board .diagonalWins(turn)) {
       return true;
@@ -111,39 +112,39 @@ $(document).ready(function() {
 
   $('#0').click(function() {
     $('#0-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 0);
+    turn = onSpaceClicked(turn, 0);
   });
   $('#1').click(function() {
     $('#1-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 1);
+    turn = onSpaceClicked(turn, 1);
   });
   $('#2').click(function() {
     $('#2-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 2);
+    turn = onSpaceClicked(turn, 2);
   });
   $('#3').click(function() {
     $('#3-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 3);
+    turn = onSpaceClicked(turn, 3);
   });
   $('#4').click(function() {
     $('#4-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 4);
+    turn = onSpaceClicked(turn, 4);
   });
   $('#5').click(function() {
     $('#5-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 5);
+    turn = onSpaceClicked(turn, 5);
   });
   $('#6').click(function() {
     $('#6-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 6);
+    turn = onSpaceClicked(turn, 6);
   });
   $('#7').click(function() {
     $('#7-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 7);
+    turn = onSpaceClicked(turn, 7);
   });
   $('#8').click(function() {
     $('#8-marked').text(turn);
-    turn = Board.onSpaceClicked(turn, 8);
+    turn = onSpaceClicked(turn, 8);
   });
 });
 
