@@ -109,4 +109,12 @@ describe("Board", function() {
       testBoard.wins("X").should.equal(false);
     });
   });
+  describe('onSpaceClicked', function() {
+    it('when player clicks on space 0, turns alternate normally', function() {
+      var testBoard = Object.create(Board);
+      testBoard.initialize();
+      $('#0').trigger("click");
+      turn.should.equal("O");
+    });
+  });
 });

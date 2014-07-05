@@ -24,6 +24,20 @@ var Space = {
 };
 
 var Board = {
+  onSpaceClicked: function(turn) {
+    if(Board.wins(turn)) {
+      $('.win').show();
+      $('.winner').text(turn);
+    } else if (turn === "X") {
+      turn = "O";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } else if (turn === "O") {
+      turn = "X";
+      $('.open-message-x').hide();
+      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
+    } return turn;
+  },
   wins: function(turn) {
     if (Board.verticalWins(turn) || Board .horizontalWins(turn) || Board .diagonalWins(turn)) {
       return true;
@@ -34,7 +48,7 @@ var Board = {
   verticalWins: function(turn) {
     var symbol = turn;
     if(Space.spaces[0].markedBy === symbol && Space.spaces[1].markedBy === symbol && Space.spaces[2].markedBy === symbol) {
-    
+
       return true;
     } else if(Space.spaces[3].markedBy === symbol && Space.spaces[4].markedBy === symbol && Space.spaces[5].markedBy === symbol) {
       return true;
@@ -88,154 +102,56 @@ var Board = {
   }
 };
 
+var turn = "X";
+
 $(document).ready(function() {
   var newBoard = Object.create(Board);
   newBoard.initialize();
-  var turn = "X";
 
   $('#0').click(function() {
     $('#0-marked').text(turn);
     Space.spaces[0].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#1').click(function() {
     $('#1-marked').text(turn);
     Space.spaces[1].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#2').click(function() {
     $('#2-marked').text(turn);
     Space.spaces[2].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#3').click(function() {
     $('#3-marked').text(turn);
     Space.spaces[3].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#4').click(function() {
     $('#4-marked').text(turn);
     Space.spaces[4].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#5').click(function() {
     $('#5-marked').text(turn);
     Space.spaces[5].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#6').click(function() {
     $('#6-marked').text(turn);
     Space.spaces[6].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#7').click(function() {
     $('#7-marked').text(turn);
     Space.spaces[7].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
   $('#8').click(function() {
     $('#8-marked').text(turn);
     Space.spaces[8].markBy(turn);
-    if(Board.wins(turn)) {
-      $('.win').show();
-      $('.winner').text(turn);
-    } else if (turn === "X") {
-      turn = "O";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    } else if (turn === "O") {
-      turn = "X";
-      $('.open-message-x').hide();
-      $('p#turns').text("Now " + turn + " it's your turn. Click on a square.");
-    }
+    turn = Board.onSpaceClicked(turn);
   });
 });
 
