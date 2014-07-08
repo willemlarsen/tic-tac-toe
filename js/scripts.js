@@ -1,3 +1,4 @@
+
 var onSpaceClicked = function(turn, spaceNumber) {
   Space.spaces[spaceNumber].markBy(turn);
   if(Board.wins(turn)) {
@@ -110,41 +111,14 @@ $(document).ready(function() {
   var newBoard = Object.create(Board);
   newBoard.initialize();
 
-  $('#0').click(function() {
-    $('#0-marked').text(turn);
-    turn = onSpaceClicked(turn, 0);
-  });
-  $('#1').click(function() {
-    $('#1-marked').text(turn);
-    turn = onSpaceClicked(turn, 1);
-  });
-  $('#2').click(function() {
-    $('#2-marked').text(turn);
-    turn = onSpaceClicked(turn, 2);
-  });
-  $('#3').click(function() {
-    $('#3-marked').text(turn);
-    turn = onSpaceClicked(turn, 3);
-  });
-  $('#4').click(function() {
-    $('#4-marked').text(turn);
-    turn = onSpaceClicked(turn, 4);
-  });
-  $('#5').click(function() {
-    $('#5-marked').text(turn);
-    turn = onSpaceClicked(turn, 5);
-  });
-  $('#6').click(function() {
-    $('#6-marked').text(turn);
-    turn = onSpaceClicked(turn, 6);
-  });
-  $('#7').click(function() {
-    $('#7-marked').text(turn);
-    turn = onSpaceClicked(turn, 7);
-  });
-  $('#8').click(function() {
-    $('#8-marked').text(turn);
-    turn = onSpaceClicked(turn, 8);
-  });
+  var squareSetUp = function (number) {
+      $('#' + number).click(function() {
+      $('#' + number + '-marked').text(turn);
+      turn = onSpaceClicked(turn, number);
+    });
+  };
+  for (var index = 0; index < 9; index++) {
+    squareSetUp(index);
+  }
 });
 
